@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { siteConfig } from "@/site.config";
 
 export async function GET() {
-  const s = db.settings.get();
+  const s = await db.settings.get();
   if (!s) {
     return NextResponse.json({
       brandName: siteConfig.brand.name,
@@ -32,7 +32,7 @@ export async function PUT(req: NextRequest) {
     } else {
       delete updates.adminPassword;
     }
-    const s = db.settings.upsert(updates);
+    const s = await db.settings.upsert(updates);
     const { adminPassword, ...rest } = s as any;
     return NextResponse.json(rest);
   } catch (err: any) {

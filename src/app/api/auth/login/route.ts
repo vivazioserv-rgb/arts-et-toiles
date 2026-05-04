@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   const { password } = await req.json().catch(() => ({}));
   if (!password) return NextResponse.json({ error: "Mot de passe requis" }, { status: 400 });
 
-  const s = db.settings.get();
+  const s = await db.settings.get();
   if (!s) return NextResponse.json({ error: "Configuration introuvable. Lancez /api/seed" }, { status: 500 });
 
   const valid = await bcrypt.compare(password, s.adminPassword);

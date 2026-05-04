@@ -69,15 +69,22 @@ export async function POST(req: NextRequest) {
       })
     );
 
+    // L'URL publique dépend de la configuration du bucket
+    // Si R2_PUBLIC_URL n'est pas défini, on utilise l'URL de l'endpoint S3
+    // qui fonctionne avec les clés API
     const publicUrl = r2PublicUrl
-      ? `${r2PublicUrl.replace(/\/$/, "")}/${key}`
+      ? `${r2PublicUrl.replace(/\/$/, "")}/${key}`.replace(/\/\//g, "/")
       : `https://${r2Bucket}.${r2AccountId}.r2.dev/${key}`;
 
+    // Vérifier que l'URL est correcte
+    const cleanUrl = publicUrl.replace(/\/\//g, "/");
+
     return NextResponse.json({
-      url: publicUrl,
+      url: cleanUrl,
       key,
       configured: true,
       message: "Image uploadée avec succès sur Cloudflare R2",
+      note: "⚠️ Assure-toi que l'accès public est activé sur le bucket R2 dans Cloudflare Dashboard",
     });
 
   } catch (err: any) {

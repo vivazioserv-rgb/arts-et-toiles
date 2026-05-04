@@ -11,9 +11,14 @@ const ART_FIL_CATEGORY_ID = "artafil";
 
 export default async function CataloguePage({ searchParams }: { searchParams: Promise<{ cat?: string }> }) {
   const sp = await searchParams;
-  const products = db.products.all();
-  const categories = db.categories.active();
-  const settings = db.settings.get() || {};
+  const products = await db.products.all();
+  const categories = await db.categories.active();
+  const settings = (await db.settings.get()) || {};
+  // Pré-charger les noms des catégories dans un Map
+  const catNames = new Map<string, string>();
+  for (const cat of categories) {
+    catNames.set(cat._id, cat.name);
+  }
   const filtered = sp.cat ? products.filter((p: any) => p.category === sp.cat) : products;
 
   return (
@@ -62,7 +67,7 @@ export default async function CataloguePage({ searchParams }: { searchParams: Pr
                     </div>
                   </Link>
                   <div className="p-4">
-                    {p.category && <p className="mb-1 text-[10px] uppercase tracking-wider text-[var(--primary)]">{(db.categories.get as any)(p.category)?.name || ""}</p>}
+                    {p.category && <p className="mb-1 text-[10px] uppercase tracking-wider text-[var(--primary)]">{catNames.get(p.category) || ""}</p>}
                     <Link href={`/produit/${p._id}`}><h3 className="line-clamp-1 font-medium hover:text-[var(--primary)]">{p.name}</h3></Link>
                     {p.shortDesc && <p className="mt-1 line-clamp-2 text-xs text-[var(--foreground)]/60">{p.shortDesc}</p>}
                     <div className="mt-3 flex items-center justify-between">
