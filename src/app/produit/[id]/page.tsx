@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Cart from "@/components/Cart";
-import AddToCartButton from "@/components/AddToCartButton";
+import ProductActions from "@/components/ProductActions";
 import { db } from "@/lib/db";
 import { siteConfig } from "@/site.config";
 
@@ -71,9 +71,9 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                 Délai de fabrication : {product.delay} heures
               </p>
 
-              {/* Bouton ajouter au panier */}
+              {/* Bouton ajouter au panier avec options */}
               <div className="mt-8">
-                <AddToCartButton product={product} />
+                <ProductActions product={product} />
               </div>
             </div>
           </div>
