@@ -1,0 +1,454 @@
+[
+  {
+    "_id": "molo5sy7",
+    "createdAt": "2026-04-30T15:59:17.461Z",
+    "name": "Éclats d'Azur",
+    "shortDesc": "Œuvre abstraite contemporaine, nuances de bleu et or",
+    "longDesc": "Une composition abstraite où le bleu profond rencontre des éclats dorés à la feuille d'or. Cette œuvre numérique éditée en 50 exemplaires numérotés capture la lumière et le mouvement. Idéale pour un salon contemporain ou un bureau d'architecte. Livrée avec certificat d'authenticité et numéro d'édition. \n\nDisponible en tirage sur toile tendue, Alu Dibond, poster ou fichier numérique HD pour usage personnel.",
+    "basePrice": 89,
+    "delay": 48,
+    "isNew": true,
+    "status": "available",
+    "category": "molo5sy2",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1549490349-8643362247b5?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Toile tendue (châssis bois)", "surcharge": 0 },
+      { "name": "Alu Dibond brossé", "surcharge": 35 },
+      { "name": "Poster premium roulé", "surcharge": -15 },
+      { "name": "Impression photo Fine Art", "surcharge": 20 }
+    ],
+    "sizes": [
+      { "name": "40×60 cm", "surcharge": 0 },
+      { "name": "60×90 cm", "surcharge": 40 },
+      { "name": "80×120 cm", "surcharge": 85 },
+      { "name": "Fichier numérique HD", "surcharge": -30 }
+    ]
+  },
+  {
+    "_id": "molo5sy8",
+    "createdAt": "2026-04-30T15:59:17.462Z",
+    "name": "Crépuscule #7",
+    "shortDesc": "Photographie d'art, coucher de soleil sur l'Atlantique",
+    "longDesc": "Tirage Fine Art d'une photographie primée. Pris au coucher du soleil sur la côte atlantique française, ce cliché capture l'instant où le ciel embrase l'océan. Tirage limité à 25 exemplaires, signé et numéroté. \n\nPapier Fine Art Hahnemühle 308g, encres pigmentaires Epson UltraChrome HD. Chaque tirage est livré sous pochette neutre avec certificat d'authenticité.",
+    "basePrice": 120,
+    "delay": 72,
+    "isNew": true,
+    "status": "available",
+    "category": "molo5sy3",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Papier Fine Art (Hahnemühle)", "surcharge": 0 },
+      { "name": "Toile Fine Art Canvas", "surcharge": 15 },
+      { "name": "Alu Dibond satiné", "surcharge": 30 },
+      { "name": "Poster premium roulé", "surcharge": -25 }
+    ],
+    "sizes": [
+      { "name": "60×90 cm", "surcharge": 0 },
+      { "name": "80×120 cm", "surcharge": 55 },
+      { "name": "100×150 cm", "surcharge": 120 },
+      { "name": "120×180 cm (sur devis)", "surcharge": 0 }
+    ]
+  },
+  {
+    "_id": "molo5sy9",
+    "createdAt": "2026-04-30T15:59:17.464Z",
+    "name": "Portrait Éphémère",
+    "shortDesc": "Série Portraits Contemporains, édition limitée",
+    "longDesc": "Portrait extrait de la série 'Éphémères', une exploration des expressions humaines capturées en lumière naturelle. Chaque tirage est unique, développé à la main en laboratoire. \n\nTirage Fine Art sur papier baryté 320g, tirage limité à 10 exemplaires. Numéroté, signé, avec certificat. Encadrement possible sur demande (nous contacter).",
+    "basePrice": 150,
+    "delay": 96,
+    "isNew": false,
+    "status": "available",
+    "category": "molo5sy4",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1554188248-986adbb73be4?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1554188248-986adbb73be4?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Papier Baryté Premium", "surcharge": 0 },
+      { "name": "Toile Fine Art", "surcharge": 20 },
+      { "name": "Fichier numérique HD (usage personnel)", "surcharge": -50 }
+    ],
+    "sizes": [
+      { "name": "40×60 cm", "surcharge": 0 },
+      { "name": "60×90 cm", "surcharge": 40 },
+      { "name": "80×120 cm", "surcharge": 85 },
+      { "name": "Fichier numérique HD", "surcharge": -30 }
+    ]
+  },
+  {
+    "_id": "molo5sya",
+    "createdAt": "2026-04-30T15:59:17.465Z",
+    "name": "Minimal #03",
+    "shortDesc": "Art digital minimaliste, lignes et équilibre",
+    "longDesc": "Création digitale minimaliste où la simplicité des formes rencontre l'harmonie des proportions. Une œuvre apaisante pour les espaces épurés.  \n\nDisponible en impression haute définition sur tout support ou en téléchargement numérique HD pour une utilisation illimitée (impression chez votre artisan, fond d'écran, etc.). Licence personnelle incluse.",
+    "basePrice": 59,
+    "delay": 24,
+    "isNew": true,
+    "status": "available",
+    "category": "molo5sy5",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Poster premium", "surcharge": 0 },
+      { "name": "Alu Dibond", "surcharge": 25 },
+      { "name": "Toile tendue", "surcharge": 15 },
+      { "name": "Fichier numérique HD + licence", "surcharge": -20 }
+    ],
+    "sizes": [
+      { "name": "30×40 cm", "surcharge": 0 },
+      { "name": "40×60 cm", "surcharge": 20 },
+      { "name": "50×70 cm", "surcharge": 35 }
+    ]
+  },
+  {
+    "_id": "molo5syb",
+    "createdAt": "2026-04-30T15:59:17.466Z",
+    "name": "Urban Soul",
+    "shortDesc": "Street art mural, technique mixte digitale",
+    "longDesc": "Œuvre inspirée du street art new-yorkais, mêlant lettres néon, collages numériques et textures urbaines. Un travail sur la matière qui donne l'illusion de la peinture en spray et des affiches lacérées. \n\nCollection 'Urban Stories', édition limitée à 100 exemplaires. Chaque pièce est numérotée et signée numériquement.",
+    "basePrice": 79,
+    "delay": 48,
+    "isNew": true,
+    "status": "available",
+    "category": "molo5sy6",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Poster premium (60×90)", "surcharge": 0 },
+      { "name": "Toile tendue (châssis)", "surcharge": 20 },
+      { "name": "Alu Dibond brillant", "surcharge": 35 },
+      { "name": "Fichier numérique HD", "surcharge": -30 }
+    ],
+    "sizes": [
+      { "name": "40×60 cm", "surcharge": 0 },
+      { "name": "60×90 cm", "surcharge": 40 },
+      { "name": "80×120 cm", "surcharge": 85 },
+      { "name": "Fichier numérique HD", "surcharge": -30 }
+    ]
+  },
+  {
+    "_id": "molo5syc",
+    "createdAt": "2026-04-30T15:59:17.467Z",
+    "name": "Nébuleuse 2.0",
+    "shortDesc": "Abstraction cosmique générée par IA, pièce unique",
+    "longDesc": "Œuvre créée par intelligence artificielle entraînée sur des milliers de photographies du télescope Hubble. Chaque tirage est une interprétation unique des confins de l'univers. \n\nPièce numérotée de la série 'Cosmos' (25 exemplaires). Certificat d'authenticité blockchain inclus. Formats jusqu'à 120×180 cm disponibles.",
+    "basePrice": 139,
+    "delay": 72,
+    "isNew": false,
+    "status": "available",
+    "category": "molo5sy2",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Toile tendue (châssis bois)", "surcharge": 0 },
+      { "name": "Alu Dibond brossé", "surcharge": 35 },
+      { "name": "Poster premium roulé", "surcharge": -15 },
+      { "name": "Impression photo Fine Art", "surcharge": 20 }
+    ],
+    "sizes": [
+      { "name": "60×90 cm", "surcharge": 0 },
+      { "name": "80×120 cm", "surcharge": 55 },
+      { "name": "100×150 cm", "surcharge": 120 },
+      { "name": "120×180 cm (sur devis)", "surcharge": 0 }
+    ]
+  },
+  {
+    "_id": "molo5syd",
+    "createdAt": "2026-04-30T15:59:17.468Z",
+    "name": "Harmonie Végétale",
+    "shortDesc": "Photographie botanique, macrophotographie d'art",
+    "longDesc": "Plongez au cœur du vivant avec cette macrophotographie botanique qui révèle les détails invisibles à l'œil nu : nervures, textures, jeux de lumière sur la matière organique. \n\nImpression sur papier Fine Art Canson Infinity 310g. Édition limitée à 50 exemplaires numérotés. Encadrement caisse américaine disponible sur demande.",
+    "basePrice": 95,
+    "delay": 72,
+    "isNew": false,
+    "status": "available",
+    "category": "molo5sy3",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Papier Canson Fine Art", "surcharge": 0 },
+      { "name": "Toile Fine Art Canvas", "surcharge": 15 },
+      { "name": "Impression métal (Alu)", "surcharge": 40 }
+    ],
+    "sizes": [
+      { "name": "40×60 cm", "surcharge": 0 },
+      { "name": "60×90 cm", "surcharge": 40 },
+      { "name": "80×120 cm", "surcharge": 85 },
+      { "name": "Fichier numérique HD", "surcharge": -30 }
+    ]
+  },
+  {
+    "_id": "molo5sye",
+    "createdAt": "2026-04-30T15:59:17.470Z",
+    "name": "Abstract Geometry #5",
+    "shortDesc": "Art digital géométrique, vectoriel haute définition",
+    "longDesc": "Une composition géométrique précise où chaque angle a été calculé pour créer une harmonie visuelle parfaite. Couleurs vibrantes sur fond noir profond. \n\nVendue en téléchargement numérique HD (format 6000×9000 px, JPEG 300dpi) pour impression chez votre artisan ou utilisation digitale. Licence personnelle et professionnelle limitée incluse.",
+    "basePrice": 29,
+    "delay": 0,
+    "isNew": true,
+    "status": "available",
+    "category": "molo5sy5",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Fichier numérique HD (6000×9000px)", "surcharge": 0 },
+      { "name": "Poster premium 40×60cm", "surcharge": 20 }
+    ],
+    "sizes": []
+  },
+  {
+    "_id": "molo5syf",
+    "createdAt": "2026-04-30T15:59:17.471Z",
+    "name": "Graffiti Lumière",
+    "shortDesc": "Light painting photographique, performance nocturne",
+    "longDesc": "Performance photographique capturée en pose longue dans les rues de Paris. L'artiste a dessiné avec la lumière (LED) directement dans l'espace, créant des motifs kaléidoscopiques qui semblent flotter dans la nuit. \n\nTirage argentique Fine Art, édition limitée à 15 exemplaires. Tirage contrecollé sur Alu Dibond avec finition brossée. Livré avec certificat et clous d'accrochage.",
+    "basePrice": 180,
+    "delay": 96,
+    "isNew": true,
+    "status": "available",
+    "category": "molo5sy6",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Alu Dibond brossé", "surcharge": 0 },
+      { "name": "Toile tendue premium", "surcharge": 20 }
+    ],
+    "sizes": [
+      { "name": "60×90 cm", "surcharge": 0 },
+      { "name": "80×120 cm", "surcharge": 55 },
+      { "name": "100×150 cm", "surcharge": 120 },
+      { "name": "120×180 cm (sur devis)", "surcharge": 0 }
+    ]
+  },
+  {
+    "_id": "afil01",
+    "createdAt": "2026-05-01T10:00:00.000Z",
+    "name": "Mosaïque Géométrique",
+    "shortDesc": "Tableau art à fil, motifs géométriques entrelacés",
+    "longDesc": "Pièce unique réalisée à la main selon la technique du string art. Des centaines de fils de coton mercerisé tendus entre des clous en laiton sur un panneau de bois massif. Chaque intersection crée un jeu d'ombres et de lumières qui évolue au fil de la journée. \n\nŒuvre artisanale faite main dans notre atelier. Livrée avec certificat d'authenticité, notice d'entretien et système d'accrochage invisible. Délai de fabrication : 5 à 7 jours ouvrés.",
+    "basePrice": 220,
+    "delay": 120,
+    "isNew": true,
+    "status": "available",
+    "category": "artafil",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1559827291-baf8b16c2f22?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1559827291-baf8b16c2f22?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Fil coton mercerisé mat", "surcharge": 0 },
+      { "name": "Fil coton mercerisé brillant", "surcharge": 20 },
+      { "name": "Fil lin naturel", "surcharge": 35 },
+      { "name": "Fil soie synthétique", "surcharge": 45 }
+    ],
+    "sizes": [
+      { "name": "20×20 cm", "surcharge": 0 },
+      { "name": "30×40 cm", "surcharge": 80 },
+      { "name": "40×60 cm", "surcharge": 180 },
+      { "name": "50×70 cm", "surcharge": 280 }
+    ]
+  },
+  {
+    "_id": "afil02",
+    "createdAt": "2026-05-01T10:00:00.001Z",
+    "name": "Portrait Filaire — Élégance",
+    "shortDesc": "Portrait de femme réalisé en string art, pièce unique",
+    "longDesc": "Ce portrait filaire capture la grâce d'un visage féminin avec des centaines de fils tendus avec une précision millimétrique. Technique du string art sur panneau de bois peint à la main en fond. Les courbes sont obtenues par la tension progressive du fil, créant un effet 3D saisissant. \n\nPièce artisanale unique — chaque portrait est réalisé sur commande à partir d'une photo ou d'une esquisse. Livré avec certificat d'authenticité et système d'accrochage.",
+    "basePrice": 390,
+    "delay": 168,
+    "isNew": true,
+    "status": "available",
+    "category": "artafil",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Fil coton mat", "surcharge": 0 },
+      { "name": "Fil coton brillant", "surcharge": 25 },
+      { "name": "Fil métallisé or", "surcharge": 80 },
+      { "name": "Fil métallisé argent", "surcharge": 60 }
+    ],
+    "sizes": [
+      { "name": "30×40 cm", "surcharge": 0 },
+      { "name": "40×60 cm", "surcharge": 150 },
+      { "name": "60×80 cm", "surcharge": 350 }
+    ]
+  },
+  {
+    "_id": "afil03",
+    "createdAt": "2026-05-01T10:00:00.002Z",
+    "name": "Mandala Textile",
+    "shortDesc": "Mandala circulaire en fil, inspiration bohème",
+    "longDesc": "Un mandala circulaire d'inspiration bohème réalisé avec des fils de coton et de lin dans des tons naturels et des accents dorés. Le motif rayonne depuis le centre en motifs géométriques concentriques, chaque anneau ajoutant une couche de complexité. \n\nPièce artisanale sur panneau de bois brut cerclé de clous en cuivre. Accrochage mural inclus. Délai de fabrication : 5 à 7 jours.",
+    "basePrice": 180,
+    "delay": 120,
+    "isNew": true,
+    "status": "available",
+    "category": "artafil",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1611580703780-07c3a000c246?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1611580703780-07c3a000c246?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1559827291-baf8b16c2f22?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Coton écru naturel", "surcharge": 0 },
+      { "name": "Lin écru + accents or", "surcharge": 30 },
+      { "name": "Coton teint (vif)", "surcharge": 15 },
+      { "name": "Mixte coton + métallisé", "surcharge": 50 }
+    ],
+    "sizes": [
+      { "name": "Ø 25 cm", "surcharge": 0 },
+      { "name": "Ø 35 cm", "surcharge": 60 },
+      { "name": "Ø 50 cm", "surcharge": 140 },
+      { "name": "Ø 70 cm", "surcharge": 260 }
+    ]
+  },
+  {
+    "_id": "afil04",
+    "createdAt": "2026-05-01T10:00:00.003Z",
+    "name": "Arabesque Dorée",
+    "shortDesc": "Motif arabe en fil d'or sur fond noir laqué",
+    "longDesc": "Inspiré des motifs d'arabesques orientales, ce tableau en string art associe un fond noir laqué profond à des fils métallisés dorés et cuivrés. Les courbes entrelacées captent la lumière sous tous les angles, offrant une œuvre qui vit et scintille au gré des heures. \n\nPièce entièrement faite main. Cadre en bois massin, fond noir laqué, clous en acier inoxydable. Livrée avec certificat.",
+    "basePrice": 320,
+    "delay": 144,
+    "isNew": false,
+    "status": "available",
+    "category": "artafil",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Fil métallisé or sur noir", "surcharge": 0 },
+      { "name": "Fil métallisé cuivre sur noir", "surcharge": 0 },
+      { "name": "Fil métallisé argent sur marine", "surcharge": 10 },
+      { "name": "Fil coton doré sur blanc", "surcharge": -30 }
+    ],
+    "sizes": [
+      { "name": "30×30 cm", "surcharge": 0 },
+      { "name": "40×60 cm", "surcharge": 120 },
+      { "name": "60×80 cm", "surcharge": 280 }
+    ]
+  },
+  {
+    "_id": "afil05",
+    "createdAt": "2026-05-01T10:00:00.004Z",
+    "name": "Carte de France Filée",
+    "shortDesc": "Carte de France artisanale en string art",
+    "longDesc": "La carte de France métropolitaine réalisée en string art artisanal. Des clous placés avec précision délimitent chaque région, reliés par des fils de couleur différente. Tableau ludique et décoratif qui ravira les amoureux de la France et les passionnés d'artisanat. \n\nPièce unique faite main. Bois de peuplier massif, clous en acier, fils coton & lin. Accrochage mural inclus. Idéal pour une entrée, un salon ou un bureau.",
+    "basePrice": 260,
+    "delay": 120,
+    "isNew": true,
+    "status": "available",
+    "category": "artafil",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Fils multicolores régionaux", "surcharge": 0 },
+      { "name": "Fils unis (bleu/blanc/rouge)", "surcharge": 10 },
+      { "name": "Fils tons naturels (écru/lin)", "surcharge": 0 },
+      { "name": "Fil métallisé or uni", "surcharge": 60 }
+    ],
+    "sizes": [
+      { "name": "30×40 cm", "surcharge": 0 },
+      { "name": "40×60 cm", "surcharge": 100 },
+      { "name": "60×80 cm", "surcharge": 240 }
+    ]
+  },
+  {
+    "_id": "afil06",
+    "createdAt": "2026-05-01T10:00:00.005Z",
+    "name": "Onde Sonore — Yamaha",
+    "shortDesc": "Tableau string art représentant une courbe sonore",
+    "longDesc": "Un tableau mural unique représentant la courbe sonore d'un morceau de musique iconique. En partenariat avec des passionnés de musique, chaque onde est modélisée puis transcrite en fil sur un panneau de bois. Le résultat est une œuvre visuelle et symbolique qui fait le lien entre l'art, la musique et l'artisanat. \n\nPièce artisanale personnalisable (nous contacter pour votre morceau). Accrochage et certificat inclus.",
+    "basePrice": 240,
+    "delay": 120,
+    "isNew": false,
+    "status": "available",
+    "category": "artafil",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1559827291-baf8b16c2f22?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1559827291-baf8b16c2f22?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Fil noir sur fond blanc", "surcharge": 0 },
+      { "name": "Fil blanc sur fond noir", "surcharge": 0 },
+      { "name": "Fil rouge sur fond noir", "surcharge": 10 },
+      { "name": "Fil bleu électrique sur fond blanc", "surcharge": 10 }
+    ],
+    "sizes": [
+      { "name": "30×20 cm", "surcharge": 0 },
+      { "name": "50×30 cm", "surcharge": 80 },
+      { "name": "70×40 cm", "surcharge": 180 }
+    ]
+  },
+  {
+    "_id": "afil07",
+    "createdAt": "2026-05-01T10:00:00.006Z",
+    "name": "Cœur Anatomique",
+    "shortDesc": "Cœur humain en string art, science et art à fil",
+    "longDesc": "Entre science et art, ce cœur anatomique est une pièce unique qui fascine par sa précision. Artère, ventricule et oreillettes sont représentés par la tension de fils de couleur rouge et rose, créant un rendu 3D bluffant. \n\nPièce artisanale sur fond blanc. Chaque tableau est numéroté et signé. Idéal pour un cabinet médical, une salle d'étude ou un passionné d'anatomie.",
+    "basePrice": 290,
+    "delay": 168,
+    "isNew": true,
+    "status": "available",
+    "category": "artafil",
+    "allergens": "",
+    "imageUrl": "https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=1200&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1559827291-baf8b16c2f22?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "flavors": [
+      { "name": "Fils rouges/roses sur blanc", "surcharge": 0 },
+      { "name": "Fils rouges/or sur noir", "surcharge": 15 },
+      { "name": "Fils violet/rouge sur blanc", "surcharge": 10 }
+    ],
+    "sizes": [
+      { "name": "30×40 cm", "surcharge": 0 },
+      { "name": "40×60 cm", "surcharge": 130 },
+      { "name": "60×80 cm", "surcharge": 310 }
+    ]
+  }
+]

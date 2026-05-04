@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "molo1tba",
+    "brandName": "Arts & Toiles",
+    "brandTagline": "Galerie d'Art Contemporain",
+    "heroTitle": "L'art qui habille vos murs",
+    "heroSubtitle": "Impressions sur toile grand format, éditions limitées numérotées et signées. De l'art contemporain pour transformer votre intérieur.",
+    "heroImageUrl": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1600&auto=format&fit=crop&q=85",
+    "email": "contact@arts-et-toiles.fr",
+    "phone": "06 12 34 56 78",
+    "zone": "Livraison France & Europe",
+    "adminPassword": "$2b$10$iMPVxkQboJD8A8d7UagHaO6eFKEduQVbt3xT1UWVdAwoynGHqhNDG",
+    "slots": [],
+    "openWeekdays": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closedDates": [],
+    "minDelay": 72,
+    "about": "\"Arts & Toiles\" est née d'une passion pour l'art contemporain accessible.\n\nNotre mission : rendre l'art abordable sans compromis sur la qualité. Chaque œuvre que nous proposons est une édition limitée, numérotée et signée, disponible sur des supports premium : toile fine art, Alu Dibond, papier baryté, ou en fichier numérique haute définition.\n\nNotre galerie en ligne vous permet d'acquérir des œuvres originales en quelques clics, avec des options de finition et de format adaptées à tous les espaces et budgets. Du petit format pour un cadre de bureau au grand format pour habiller un salon, chaque tirage est réalisé avec soin dans notre atelier.\n\nEngagés pour l'art accessible, nous proposons également des fichiers numériques HD à prix doux, pour que chacun puisse décorer son intérieur comme il l'entend.",
+    "cgv": "Toutes nos œuvres sont des éditions limitées numérotées et signées. Les tirages physiques sont expédiés sous 48h à 96h ouvrées selon le format choisi. Les fichiers numériques sont disponibles en téléchargement immédiat après paiement. Conformément à la loi, vous disposez d'un droit de rétractation de 14 jours pour les tirages physiques — hors fichiers numériques qui ne sont ni repris ni échangés. Les fichiers numériques sont livrés avec une licence d'usage personnel uniquement.",
+    "rgpd": "Vos données personnelles (nom, email, adresse) sont collectées uniquement pour le traitement de vos commandes et ne sont jamais transmises à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous à contact@arts-et-toiles.fr.",
+    "cookiesPolicy": "Ce site utilise uniquement des cookies essentiels au fonctionnement (panier, session admin). Aucun cookie de tracking ou publicitaire n'est utilisé."
+  }
+]
