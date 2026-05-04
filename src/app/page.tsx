@@ -211,7 +211,7 @@ export default async function HomePage() {
             </div>
             <div className="relative aspect-square overflow-hidden rounded-sm shadow-inner md:aspect-auto">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&auto=format&fit=crop&q=85" alt="Atelier d'artiste" className="h-full w-full object-cover" />
+              <img src={settings.commissionImageUrl || "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&auto=format&fit=crop&q=85"} alt="Atelier d'artiste" className="h-full w-full object-cover" />
             </div>
           </div>
         </section>

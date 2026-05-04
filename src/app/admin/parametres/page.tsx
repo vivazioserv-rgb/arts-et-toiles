@@ -60,10 +60,16 @@ export default function AdminParametresPage() {
           <Field label="Slogan" value={form.brandTagline} onChange={(v: string) => update("brandTagline", v)} />
         </Section>
 
-        <Section label="Page d'accueil">
+        <Section label="Page d'accueil — Hero">
           <Field label="Titre" value={form.heroTitle} onChange={(v: string) => update("heroTitle", v)} />
           <Field label="Sous-titre" value={form.heroSubtitle} onChange={(v: string) => update("heroSubtitle", v)} large />
-          <Field label="URL de l'image" value={form.heroImageUrl} onChange={(v: string) => update("heroImageUrl", v)} />
+          <Field label="URL de l'image Hero" value={form.heroImageUrl} onChange={(v: string) => update("heroImageUrl", v)} />
+          <ImagePreview url={form.heroImageUrl} />
+        </Section>
+
+        <Section label="Page d'accueil — Image section Commission / Sur-mesure">
+          <Field label="URL de l'image Commission" value={form.commissionImageUrl || ""} onChange={(v: string) => update("commissionImageUrl", v)} />
+          <ImagePreview url={form.commissionImageUrl} />
         </Section>
 
         <Section label="Contact">
@@ -82,6 +88,14 @@ export default function AdminParametresPage() {
         </Section>
       </div>
     </div>
+  );
+}
+
+function ImagePreview({ url }: { url?: string }) {
+  if (!url) return null;
+  return (
+    /* eslint-disable-next-line @next/next/no-img-element */
+    <img src={url} alt="Aperçu" className="mt-2 h-32 w-full rounded-lg border border-gray-200 object-cover" />
   );
 }
 
