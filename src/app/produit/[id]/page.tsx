@@ -8,17 +8,25 @@ import { db } from "@/lib/db";
 import { siteConfig } from "@/site.config";
 
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
+async function fetchApi(path: string) {
+  const base = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000";
+  const res = await fetch(`${base}${path}`, { cache: "no-store" });
+  if (!res.ok) return null;
+  return res.json();
+}
 
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const p = await db.products.get(id);
+  const products = await fetchApi("/api/products");
+  if (!products) notFound();
+  const p = products.find((x: any) => x._id === id);
   if (!p) notFound();
 
-  const settings = (await db.settings.get()) || {};
-  const categoryObj = p.category ? await db.categories.get(p.category) : null;
-  const product: any = { ...p, categoryObj };
-  const brandName = (settings as any)?.brandName || siteConfig.brand.name;
-  const allProducts = (await db.products.all()).filter((x: any) => x._id !== id && x.status !== "unavailable");
+  const product: any = p;
+  const brandName = (siteConfig as any)?.brand?.name || siteConfig.brand.name;
+  const allProducts = products.filter((x: any) => x._id !== id && x.status !== "unavailable");
 
   return (
     <>
