@@ -53,7 +53,7 @@ export default function AdminProduitsPage() {
                     </span>
                   </td>
                   <td className="flex gap-2 px-4 py-3">
-                    <button className="rounded p-1 text-blue-600 hover:bg-blue-50"><Edit className="h-4 w-4" /></button>
+                    <Link href={`/admin/produits/${p._id}`} className="rounded p-1 text-blue-600 hover:bg-blue-50"><Edit className="h-4 w-4" /></Link>
                     <button onClick={() => del(p._id)} className="rounded p-1 text-red-600 hover:bg-red-50"><Trash2 className="h-4 w-4" /></button>
                   </td>
                 </tr>
