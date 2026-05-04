@@ -1,154 +1,136 @@
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { getDb, initDatabase } from "@/lib/turso";
 import { siteConfig } from "@/site.config";
 import bcrypt from "bcryptjs";
+import fs from "fs";
+import path from "path";
 
-export async function POST() {
-  // ═══════════════════════════════════════════════════════════════
-  // Catégories artistiques
-  // ═══════════════════════════════════════════════════════════════
-  const catData = [
-    { name: "Abstrait", emoji: "🎨", active: true },
-    { name: "Paysages", emoji: "🌅", active: true },
-    { name: "Portraits", emoji: "🧑‍🎨", active: true },
-    { name: "Design", emoji: "◽", active: true },
-    { name: "Street Art", emoji: "🎭", active: true },
-    { name: "Art à Fil", emoji: "🧵", active: true },
-  ];
+const DATA_DIR = path.join(process.cwd(), "data");
 
-  const catMap: Record<string, string> = {};
-  for (const c of catData) {
-    const created = await db.categories.create(c);
-    catMap[created.name] = created._id;
+async function seed() {
+  const db = getDb();
+  await initDatabase();
+
+  // Vérifier si déjà seedé
+  const count = await db.execute("SELECT COUNT(*) as c FROM products");
+  if ((count.rows[0] as any).c > 0) {
+    return { alreadySeeded: true };
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // PRODUITS
-  // ═══════════════════════════════════════════════════════════════
-
-  const finitions = [
-    { name: "Toile tendue (châssis bois)", surcharge: 0 },
-    { name: "Alu Dibond brossé", surcharge: 35 },
-    { name: "Poster premium roulé", surcharge: -15 },
-    { name: "Impression photo Fine Art", surcharge: 20 },
+  const catData = [
+    { name: "Abstrait", emoji: "🎨", active: 1 },
+    { name: "Paysages", emoji: "🌅", active: 1 },
+    { name: "Portraits", emoji: "🧑‍🎨", active: 1 },
+    { name: "Design", emoji: "◽", active: 1 },
+    { name: "Street Art", emoji: "🎭", active: 1 },
+    { name: "Art à Fil", emoji: "🧵", active: 1 },
   ];
 
-  const formatsMoyen = [
-    { name: "40×60 cm", surcharge: 0 },
-    { name: "60×90 cm", surcharge: 40 },
-    { name: "80×120 cm", surcharge: 85 },
-    { name: "Fichier numérique HD", surcharge: -30 },
-  ];
+  // Importer depuis les fichiers JSON si disponibles
+  let catsToCreate = catData;
+  let productsToCreate: any[] = [];
 
-  const formatsGrand = [
-    { name: "60×90 cm", surcharge: 0 },
-    { name: "80×120 cm", surcharge: 55 },
-    { name: "100×150 cm", surcharge: 120 },
-    { name: "120×180 cm (sur devis)", surcharge: 0 },
-  ];
+  try {
+    const jsonCats = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "categories.json"), "utf-8"));
+    if (jsonCats.length > 0) {
+      catsToCreate = jsonCats.map((c: any) => ({
+        name: c.name,
+        emoji: c.emoji || "",
+        active: c.active ? 1 : 0,
+      }));
+    }
 
-  const formatsPetit = [
-    { name: "30×40 cm", surcharge: 0 },
-    { name: "40×60 cm", surcharge: 20 },
-    { name: "50×70 cm", surcharge: 35 },
-  ];
+    const jsonProds = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "products.json"), "utf-8"));
+    if (jsonProds.length > 0) {
+      productsToCreate = jsonProds;
+    }
+  } catch {}
 
-  await db.products.create({
-    name: "Éclats d'Azur",
-    shortDesc: "Œuvre abstraite contemporaine, nuances de bleu et or",
-    longDesc: "Composition abstraite où le bleu profond rencontre des éclats dorés à la feuille d'or. Édition limitée à 50 exemplaires numérotés.",
-    basePrice: 89, delay: 48, isNew: true, status: "available",
-    category: catMap["Abstrait"], imageUrl: "https://images.unsplash.com/photo-1549490349-8643362247b5?w=1200&auto=format&fit=crop&q=85",
-    flavors: finitions, sizes: formatsMoyen,
-  });
+  // Créer les catégories
+  const catMap: Record<string, string> = {};
+  for (const c of catsToCreate) {
+    const r = await db.execute({
+      sql: "INSERT INTO categories (_id, name, emoji, active) VALUES (?, ?, ?, ?)",
+      args: [genId(), c.name, c.emoji || "", c.active ? 1 : 0],
+    });
+    // Récupérer l'ID créé
+    const inserted = await db.execute("SELECT _id FROM categories WHERE name = ?", [c.name]);
+    catMap[c.name] = (inserted.rows[0] as any)._id;
+  }
 
-  await db.products.create({
-    name: "Crépuscule #7",
-    shortDesc: "Photographie d'art, coucher de soleil sur l'Atlantique",
-    longDesc: "Tirage Fine Art. Papier Hahnemühle 308g, édition limitée à 25 exemplaires.",
-    basePrice: 120, delay: 72, isNew: true, status: "available",
-    category: catMap["Paysages"], imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&auto=format&fit=crop&q=85",
-    flavors: [
-      { name: "Papier Fine Art (Hahnemühle)", surcharge: 0 },
-      { name: "Toile Fine Art Canvas", surcharge: 15 },
-      { name: "Alu Dibond satiné", surcharge: 30 },
-      { name: "Poster premium roulé", surcharge: -25 },
-    ],
-    sizes: formatsGrand,
-  });
+  // Créer les produits
+  for (const p of productsToCreate) {
+    await db.execute({
+      sql: `INSERT INTO products (_id, name, shortDesc, longDesc, basePrice, delay, isNew, status, imageUrl, images, allergens, category, flavors, sizes, createdAt)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      args: [
+        p._id, p.name, p.shortDesc || "", p.longDesc || "",
+        p.basePrice, p.delay || 48, p.isNew ? 1 : 0, p.status || "available",
+        p.imageUrl || "", JSON.stringify(p.images || []),
+        p.allergens || "", p.category || catMap[p.category] || "",
+        JSON.stringify(p.flavors || []), JSON.stringify(p.sizes || []),
+        p.createdAt || new Date().toISOString(),
+      ],
+    });
+  }
 
-  await db.products.create({
-    name: "Portrait Éphémère",
-    shortDesc: "Série Portraits Contemporains, édition limitée",
-    longDesc: "Portrait extrait de la série 'Éphémères'. Tirage Fine Art sur papier baryté 320g, limité à 10 exemplaires.",
-    basePrice: 150, delay: 96, isNew: false, status: "available",
-    category: catMap["Portraits"], imageUrl: "https://images.unsplash.com/photo-1554188248-986adbb73be4?w=1200&auto=format&fit=crop&q=85",
-    flavors: [
-      { name: "Papier Baryté Premium", surcharge: 0 },
-      { name: "Toile Fine Art", surcharge: 20 },
-      { name: "Fichier numérique HD (usage personnel)", surcharge: -50 },
-    ],
-    sizes: formatsMoyen,
-  });
-
-  await db.products.create({
-    name: "Minimal #03",
-    shortDesc: "Art digital minimaliste, lignes et équilibre",
-    longDesc: "Création digitale minimaliste. Disponible en impression HD ou téléchargement numérique.",
-    basePrice: 59, delay: 24, isNew: true, status: "available",
-    category: catMap["Design"], imageUrl: "https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=1200&auto=format&fit=crop&q=85",
-    flavors: [
-      { name: "Poster premium", surcharge: 0 },
-      { name: "Alu Dibond", surcharge: 25 },
-      { name: "Toile tendue", surcharge: 15 },
-      { name: "Fichier numérique HD + licence", surcharge: -20 },
-    ],
-    sizes: formatsPetit,
-  });
-
-  await db.products.create({
-    name: "Urban Soul", shortDesc: "Street art mural, technique mixte digitale",
-    longDesc: "Inspiré du street art new-yorkais. Collection 'Urban Stories', édition limitée à 100 exemplaires.",
-    basePrice: 79, delay: 48, isNew: true, status: "available",
-    category: catMap["Street Art"], imageUrl: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&auto=format&fit=crop&q=85",
-    flavors: [
-      { name: "Poster premium (60×90)", surcharge: 0 },
-      { name: "Toile tendue (châssis)", surcharge: 20 },
-      { name: "Alu Dibond brillant", surcharge: 35 },
-      { name: "Fichier numérique HD", surcharge: -30 },
-    ],
-    sizes: formatsMoyen,
-  });
-
-  // ═══════════════════════════════════════════════════════════════
   // Settings
-  // ═══════════════════════════════════════════════════════════════
-  await db.settings.upsert({
-    brandName: siteConfig.brand.name,
-    brandTagline: siteConfig.brand.tagline,
-    heroTitle: siteConfig.hero.defaultTitle,
-    heroSubtitle: siteConfig.hero.defaultSubtitle,
-    heroImageUrl: siteConfig.hero.defaultImageUrl,
-    email: siteConfig.contact.email,
-    phone: siteConfig.contact.phone,
-    zone: siteConfig.contact.zone,
-    adminPassword: await bcrypt.hash("Art1234!", 10),
-    slots: siteConfig.defaults.slots,
-    openWeekdays: siteConfig.defaults.openWeekdays,
-    closedDates: [],
-    minDelay: siteConfig.defaults.minDelay,
-    about: `"Arts & Toiles" est née d'une passion pour l'art contemporain accessible.\n\nNotre mission : rendre l'art abordable sans compromis sur la qualité.`,
-    cgv: "Toutes nos œuvres sont des éditions limitées numérotées et signées.",
-    rgpd: `Vos données personnelles sont collectées uniquement pour le traitement de vos commandes. Contact : ${siteConfig.contact.email}`,
-    cookiesPolicy: "Ce site utilise uniquement des cookies essentiels au fonctionnement.",
-  });
+  let adminPassword = await bcrypt.hash("Art1234!", 10);
+  try {
+    const jsonSettings = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "settings.json"), "utf-8"));
+    if (jsonSettings.length > 0) {
+      const s = jsonSettings[0];
+      await db.execute({
+        sql: `INSERT INTO settings (_id, brandName, brandTagline, heroTitle, heroSubtitle, heroImageUrl, commissionImageUrl, email, phone, zone, adminPassword, slots, openWeekdays, closedDates, minDelay, about, cgv, rgpd, cookiesPolicy)
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        args: [
+          genId(), s.brandName || siteConfig.brand.name, s.brandTagline || siteConfig.brand.tagline,
+          s.heroTitle || siteConfig.hero.defaultTitle, s.heroSubtitle || siteConfig.hero.defaultSubtitle,
+          s.heroImageUrl || siteConfig.hero.defaultImageUrl, s.commissionImageUrl || "",
+          s.email || siteConfig.contact.email, s.phone || siteConfig.contact.phone,
+          s.zone || siteConfig.contact.zone, s.adminPassword || adminPassword,
+          JSON.stringify(s.slots || []), JSON.stringify(s.openWeekdays || [1,2,3,4,5,6]),
+          JSON.stringify(s.closedDates || []), s.minDelay || 72,
+          s.about || "", s.cgv || "", s.rgpd || "", s.cookiesPolicy || "",
+        ],
+      });
+    }
+  } catch {
+    // Settings par défaut
+    await db.execute({
+      sql: `INSERT INTO settings (_id, brandName, brandTagline, heroTitle, heroSubtitle, heroImageUrl, email, phone, zone, adminPassword) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      args: [
+        genId(), siteConfig.brand.name, siteConfig.brand.tagline,
+        siteConfig.hero.defaultTitle, siteConfig.hero.defaultSubtitle,
+        siteConfig.hero.defaultImageUrl, siteConfig.contact.email,
+        siteConfig.contact.phone, siteConfig.contact.zone, adminPassword,
+      ],
+    });
+  }
 
-  const products = await db.products.all();
-  const categories = await db.categories.all();
+  const totalCats = await db.execute("SELECT COUNT(*) as c FROM categories");
+  const totalProds = await db.execute("SELECT COUNT(*) as c FROM products");
 
-  return NextResponse.json({
-    ok: true,
-    created: { categories: categories.length, products: products.length, settings: true },
+  return {
+    created: {
+      categories: (totalCats.rows[0] as any).c,
+      products: (totalProds.rows[0] as any).c,
+      settings: true,
+    },
     adminPassword: "Art1234!",
-  });
+    alreadySeeded: false,
+  };
+}
+
+function genId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+}
+
+export async function POST() {
+  try {
+    const result = await seed();
+    return NextResponse.json({ ok: true, ...result });
+  } catch (err: any) {
+    return NextResponse.json({ error: err?.message || "Erreur seed" }, { status: 500 });
+  }
 }
